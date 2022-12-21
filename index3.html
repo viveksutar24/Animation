@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bigdiv {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            position: relative;
+        }
+
+        #smalldiv1 {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            position: absolute;
+        }
+
+        #smalldiv2 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(23, 35, 171);
+            position: absolute;
+            left: 350px;
+        }
+
+        #smalldiv3 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(193, 20, 49);
+            position: absolute;
+            bottom: 0;
+        }
+
+        #smalldiv4 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(82, 234, 17);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        #smalldivmiddle1 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(49, 158, 67);
+            position: absolute;
+            top: 175px;
+        }
+        #smalldivmiddle2 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            left: 350px;
+            top:  175px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="bigdiv">
+        <div id="smalldiv1"></div>
+        <div id="smalldiv2"></div>
+       
+        <div id="smalldiv3"></div>
+        <div id="smalldiv4"></div>
+
+        <div id="smalldivmiddle1"></div>
+        <div id="smalldivmiddle2"></div>
+
+    </div>
+
+
+
+    <button onclick="clicked()">Click</button>
+
+    <script>
+        function clicked() {
+
+            let pos = 0;
+            let pos1 = 350;
+            let pos2 = 0;
+            let pos4 = 350;
+            let pos5 = 0;
+            let pos6 = 350;
+
+
+            let x = setInterval(animation, 10);
+            function animation() {
+                if (pos == 350) {
+                    clearInterval(x)
+                } else {
+                    pos++;
+                    let target = document.getElementById("smalldiv1")
+                    target.style.top = pos + "px";
+                    target.style.left = pos + "px";
+
+                }
+
+                // 2
+                if (pos1 == 0) {
+                    clearInterval()
+                } else {
+                    pos1--;
+                    let target = document.getElementById("smalldiv2");
+                    target.style.left = pos1 + "px";
+                    target.style.bottom = pos1 + "px";
+                }
+
+
+                // 3
+                if (pos2 == 350) {
+                    clearInterval(a)
+                } else {
+                    pos2++;
+                    let target = document.getElementById("smalldiv3")
+                    target.style.left = pos2 + "px";
+                    target.style.bottom = pos2 + "px";
+
+                }
+                // 4
+
+                if (pos4 == 0) {
+                    clearInterval(b)
+                } else {
+                    pos4--;
+                    let target = document.getElementById("smalldiv4");
+                    target.style.left = pos4 + "px";
+                    target.style.top = pos4 + "px";
+                }
+
+                // middlediv1
+
+                if (pos5 == 350) {
+                    clearInterval(x);
+                } else {
+                    pos5++;
+                    let target = document.getElementById("smalldivmiddle1");
+                    target.style.left = pos5 + "px";
+                    target.style.right = pos5 + "px";
+                }
+
+                // middlediv2
+
+                if (pos6 == 0) {
+                    clearInterval(x);
+                } else {
+                    pos6--;
+                    let target = document.getElementById("smalldivmiddle2");
+                    target.style.left = pos6 + "px";
+                    target.style.right = pos6 + "px";
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
